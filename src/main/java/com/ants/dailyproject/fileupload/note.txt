@@ -1,0 +1,15 @@
+2018-08-28
+目标：利用DiskFileItemFactory实现文件上传
+主要用到的类：
+    1.DiskFileItemFactory：创建FileItem 对象的工厂
+    2.ServletFileUpload：负责处理上传的文件数据，并将表单中每个输入项封装成一个FileItem 对象中
+    3.FileItem ：获得上传文件的流、文件名、大小等。
+实现步骤：
+    1、创建DiskFileItemFactory对象。
+    2、使用DiskFileItemFactory 对象创建ServletFileUpload对象。
+    3、调用ServletFileUpload.parseRequest方法解析request对象，得到一个保存了所有上传内容的List对象。
+    4、对list进行迭代，每迭代一个FileItem对象，调用其isFormField方法判断是否是上传文件：
+    4.1、 为普通表单字段，则调用getFieldName、getString方法得到字段名和字段值。
+    4.2、为上传文件，则调用getInputStream方法得到数据输入流，从而读取上传数据。
+准备工作：
+    需要用到的jar包：
