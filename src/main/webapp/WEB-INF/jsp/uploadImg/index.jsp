@@ -5,7 +5,7 @@
 </HEAD>
 <body>
 <div>
-    <form action="/uploadController/uploadImg" method="post" enctype="multipart/form-data">
+    <form action="/uploadController/uploadImgByStream" method="post" enctype="multipart/form-data">
         <table>
             <tr>
                 <td>姓名</td>
