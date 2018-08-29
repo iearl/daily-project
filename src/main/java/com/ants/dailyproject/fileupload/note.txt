@@ -13,3 +13,8 @@
     4.2、为上传文件，则调用getInputStream方法得到数据输入流，从而读取上传数据。
 准备工作：
     需要用到的jar包：
+        jsp页面对应包： tomcat-embed-jasper jstl
+        DiskFileItemFactory需要的包： commons-fileupload commons-io
+
+我是在SpringBoot下测试时，发现的该问题，即在解析请求时List list = upload.parseRequest(request);得到的list size=0,也就是根本没有得到文件数据。
+https://blog.csdn.net/u013248535/article/details/55823364
